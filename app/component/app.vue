@@ -1,44 +1,31 @@
-<template lang="html">
-  <div class="container">
-    <div class="columns">
-      <div class="column">
-        <div class="notification is-info">
-          <h1>内嵌组件</h1>
-          <hello></hello>
+<template>
+    <div style="width: 300px; height: 500px;" class="main-window">
+        <div class="col-md-12 header" style="background-color: #00c4a7; padding: 5px;">
+            <h2>{{name}}</h2>
         </div>
-      </div>
-      <div class="column">
-        <p class="notification is-success">
-          <label class="label">Username</label>
-          <p class="control has-icon has-icon-right">
-            <input class="input is-success" type="text" v-model="name">
-            <span class="icon is-small">
-              <i class="fa fa-check"></i>
-            </span>
-            <span class="help is-success">This username is available</span>
-          </p>
-        </p>
-      </div>
-      <div class="column">
-        <p class="notification is-warning">Third column</p>
-      </div>
+        <events></events>
     </div>
-  </div>
 </template>
 
 <script>
-import Hello from './hello.vue';
-export default {
-  data(){
-    return {
-      name:'vue@2.0'
+    import Timer from './countdown.vue';
+    import Events from './Events.vue';
+    export default {
+        data() {
+            return {
+                name: 'Notificator'
+            }
+        },
+        components: {
+            Timer,
+            Events
+        }
     }
-  },
-  components:{
-    hello:Hello
-  }
-}
 </script>
 
-<style lang="css">
-</style>
+
+<stlye>
+    .time-picker input.display-time{
+        color: black;
+    }
+</stlye>

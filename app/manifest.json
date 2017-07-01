@@ -23,6 +23,8 @@
     "default_popup": "pages/popup.html"
   },
   "permissions": [
+    "storage",
+    "notifications",
     "bookmarks",
     "clipboardRead",
     "clipboardWrite",
@@ -44,5 +46,8 @@
     "webRequest",
     "webRequestBlocking",
     "<all_urls>"
-  ]
+  ],
+  "web_accessible_resources": [
+  "images/icon-128.png"
+]
 }

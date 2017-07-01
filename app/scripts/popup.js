@@ -1,7 +1,9 @@
 import Vue from 'vue';
 import App from '../component/app.vue';
+import VueMaterial from 'vue-material'
 
-var app=new Vue({
+Vue.use(VueMaterial);
+var app= new Vue({
   el:'#app',
   data:{
     name:'vue-chrome-extension'

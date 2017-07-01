@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="vue">{{title}}</div>
+  <div class="vue">424242445{{title}}</div>
 </template>
 
 <script>

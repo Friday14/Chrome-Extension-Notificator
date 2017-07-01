@@ -1,21 +1,13 @@
 <template>
-    <div class="block">
+    <span>
         <template v-if="duration !== null">
             <span>
                 {{ duration.hours }} :
                 {{ duration.minutes }} :
                 {{ duration.seconds }}
-                <br>
-                {{ hash }}
             </span>
         </template>
-
-        <template v-if="error">
-            <span style="color: red;">
-                {{error}}
-            </span>
-        </template>
-    </div>
+    </span>
 </template>
 
 <script>
@@ -29,9 +21,9 @@
     };
 
     export default {
-        props: ['date'],
+        props: ['finished'],
         mounted(){
-            this.timeNotification = moment(date);
+            this.timeNotification = moment(this.finished);
             setInterval(() => {
                 this.updateDuration()
             }, 500)
@@ -54,7 +46,6 @@
                     minutes: this.formatNumber(duration.minutes()),
                     seconds: this.formatNumber(duration.seconds()),
                 };
-                this.hash = 'random-' + diff
             },
             formatNumber(number) {
                 if (number > 9)

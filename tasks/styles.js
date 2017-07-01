@@ -18,7 +18,7 @@ gulp.task('styles:css', function() {
 });
 
 gulp.task('styles:less', function() {
-  return gulp.src('app/styles/*.less')
+  return gulp.src('*.less')
     .pipe(gulpif(args.sourcemaps, sourcemaps.init()))
     .pipe(less({ paths: ['./app']}).on('error', function(error) {
       gutil.log(gutil.colors.red('Error (' + error.plugin + '): ' + error.message));
